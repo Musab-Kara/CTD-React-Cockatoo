@@ -17,19 +17,19 @@ let todoList = [
 
   function App() {
     return (
-      <>
+      <React.Fragment>
       <h2>Todo List</h2>
       <ul>
         
         {todoList.map((item) => {
-          return(
-            <li key={item.id}>
-              <p>{item.title}</p>
-            </li>
-          )
-        })}
+
+          return(<li key={item.id}><p>{item.title}</p></li>)
+
+        }
+        )}
+
       </ul>
-      </>
+      </React.Fragment>
     );
   }
 
