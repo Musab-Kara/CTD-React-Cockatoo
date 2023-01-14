@@ -17,9 +17,9 @@ function AddTodoForm(props) {
 
     return ( 
         <div>
-        <form  onSubmt={handleAddTodo}>
-            <label htmlFor="todoTitle">Title</label>
-             <input type="text" id="todoTitle" name='title' value={todoTitle} onChange={(e) => setTodoTitle(e.target.value)}></input>
+        <form  onSubmit={handleAddTodo}>
+            <label style={{margin:10}} htmlFor="todoTitle">Title</label>
+             <input style={{margin:10}} type="text" id="todoTitle" name='title' value={todoTitle} onChange={(e) => setTodoTitle(e.target.value)}></input>
             <button type='submit'>Add</button>
         </form>
         </div>
