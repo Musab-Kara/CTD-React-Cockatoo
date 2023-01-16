@@ -18,7 +18,7 @@ let todoList = [
   function App() {
     return (
       <React.Fragment>
-      <h2>Todo List</h2>
+      <h1>Todo List</h1>
       <ul>
         
         {todoList.map((item) => {
