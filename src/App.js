@@ -7,8 +7,21 @@ import AddTodoForm from './AddTodoForm';
     return (
       <React.Fragment>
       <h1>Todo List</h1>
+
       <AddTodoForm />
       <TodoList />
+
+      <ul>
+        
+        {todoList.map((item) => {
+
+          return(<li key={item.id}><p>{item.title}</p></li>)
+
+        }
+        )}
+
+      </ul>
+
       </React.Fragment>
     );
   }
