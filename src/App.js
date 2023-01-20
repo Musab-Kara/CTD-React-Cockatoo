@@ -1,24 +1,16 @@
 import React from 'react';
+import TodoList from './Todolist';
+import AddTodoForm from './AddTodoForm';
 
-
-let todoList = [
-  {
-    id:1,
-    title: "task 1"
-  },
-  {
-    id:2,
-    title: "task 2"
-  },
-  {
-    id:3,
-    title: "task 3"
-  }];
 
   function App() {
     return (
       <React.Fragment>
       <h1>Todo List</h1>
+
+      <AddTodoForm />
+      <TodoList />
+
       <ul>
         
         {todoList.map((item) => {
@@ -29,6 +21,7 @@ let todoList = [
         )}
 
       </ul>
+
       </React.Fragment>
     );
   }
