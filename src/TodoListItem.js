@@ -7,7 +7,7 @@ function TodoListItem(props) {
          <li>
          <p>{props.todo.title}</p>
          </li>
-    </div> );
+    </div> ); 
 
 }
 

@@ -13,7 +13,7 @@ function AddTodoForm(props) {
         setTodoTitle('');
         event.preventDefault();
         
-    }
+    } 
 
     return ( 
         <div>
