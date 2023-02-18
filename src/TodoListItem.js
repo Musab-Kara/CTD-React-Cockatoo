@@ -1,10 +1,12 @@
 import React from "react";
 
-function TodoListItem(props) {
+function TodoListItem({ todo }) {
   return (
-    <li>
-      <p>{props.todo.title}</p>
-    </li>
+    <div key={todo.id}>
+      <li>
+        <p>{todo.title}</p>
+      </li>
+    </div>
   );
 }
 
