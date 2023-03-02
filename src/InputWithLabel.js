@@ -1,13 +1,10 @@
 import React, { useEffect, useRef } from "react";
 
 function InputWithLabel({ handleTitleChange, todoTitle, children, isFocused }) {
-  const inputRef = useRef();
-
+  const inputRef = React.useRef();
   useEffect(() => {
-    if (isFocused && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [isFocused]);
+    inputRef.current.focus();
+  }, []);
 
   return (
     <>
@@ -17,7 +14,7 @@ function InputWithLabel({ handleTitleChange, todoTitle, children, isFocused }) {
         type="text"
         value={todoTitle}
         name="title"
-        autoFocus={isFocused}
+        ref={inputRef}
         onChange={handleTitleChange}
       ></input>
       <button>Add</button>
