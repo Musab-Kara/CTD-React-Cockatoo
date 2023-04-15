@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AddTodoForm from "./AddTodoForm";
 import TodoList from "./Todolist";
+import MainHeader from "./MainHeader";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -47,7 +49,8 @@ function App() {
           path="/"
           element={
             <div>
-              <h1>Todo List: </h1>
+              <MainHeader />
+              {/* <h1 className="heading">Todo List</h1> */}
               <AddTodoForm onAddTodo={addTodo} />
               {isLoading ? (
                 <p>Loading ...</p>
@@ -61,7 +64,7 @@ function App() {
           path="/new"
           element={
             <div>
-              <h1>New Todo List: </h1>
+              <MainHeader />
             </div>
           }
         />

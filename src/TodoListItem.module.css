@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #a990fb;
+  color: #2a2630;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #8c6cf7;
+}
+
+.ListItem {
+  color: white;
+  padding: 4px;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 450px) {
+  .ListItem {
+    padding: 0px;
+  }
+}
