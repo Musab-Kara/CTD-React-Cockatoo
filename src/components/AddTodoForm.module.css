@@ -15,3 +15,7 @@
 .button:hover {
   background-color: #8c6cf7;
 }
+
+.todoTitle {
+  border: 1px solid red;
+}
