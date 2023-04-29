@@ -13,7 +13,7 @@ function App() {
   console.log(todoList, "todoList");
   useEffect(() => {
     fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default`,
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`,
       {
         method: "GET",
         headers: {
@@ -22,11 +22,22 @@ function App() {
       }
     )
       .then((response) => response.json())
+
       .then((result) => {
-        setTodoList(result.records);
+        result.records.sort(function (objectA, objectB) {
+          if (objectA.fields.Title < objectB.fields.Title) {
+            return 1;
+          } else if (objectA.fields.Title > objectB.fields.Title) {
+            return -1;
+          } else {
+            return 0;
+          }
+        });
+        setTodoList([...(result.records || [])]);
         setIsLoading(false);
       });
   }, []);
+
   function addTodo(event) {
     console.log(event.target.value);
     // debugger;
