@@ -1,15 +1,15 @@
 import { MdPostAdd, MdMessage } from "react-icons/md";
 import classes from "./MainHeader.module.css";
 
-function MainHeader({ onCreatePost }) {
+function MainHeader({ onAddTodo }) {
   return (
     <header className={classes.header}>
       <h1 className={classes.logo}>
-        <MdMessage />
+        {/* <MdMessage /> */}
         My ToDo List
       </h1>
       <p>
-        <button className={classes.button} onClick={onCreatePost}>
+        <button className={classes.button} onClick={onAddTodo}>
           <MdPostAdd size={18} />
           New Post
         </button>

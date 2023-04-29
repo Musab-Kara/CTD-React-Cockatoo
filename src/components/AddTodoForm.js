@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import InputWithLabel from "./InputWithLabel";
-import style from "./TodoListItem.module.css";
+import classes from "./AddTodoForm.module.css";
+// import classes from "./MainHeader.module.css";
+import { MdPostAdd, MdMessage } from "react-icons/md";
 
-function AddTodoForm({ onAddTodo }) {
+function AddTodoForm({ onAddTodo, todoList, setTodoList }) {
   const [todoTitle, setTodoTitle] = useState("");
 
   const mybtn = {
@@ -22,10 +25,21 @@ function AddTodoForm({ onAddTodo }) {
 
   function handleAddTodo(event) {
     event.preventDefault();
-    onAddTodo({
-      title: todoTitle,
-      id: Date.now(),
-    });
+    // onAddTodo({
+    //   title: todoTitle,
+    //   id: Date.now(),
+    // });
+    setTodoList([
+      ...todoList,
+      {
+        fields: {
+          Title: todoTitle,
+        },
+        createdTime: Date.now(),
+        id: Date.now() + "",
+      },
+    ]);
+
     setTodoTitle("");
   }
 
@@ -34,7 +48,7 @@ function AddTodoForm({ onAddTodo }) {
       <form onSubmit={handleAddTodo}>
         <label htmlFor="todoTitle">Title</label>
         <input
-          style={{ margin: "10px" }}
+          // style={classes.todoTitle}
           id="todoTitle"
           type="text"
           value={todoTitle}
@@ -44,9 +58,17 @@ function AddTodoForm({ onAddTodo }) {
         {/* <button className={style.button} type="submit">
           Add
         </button> */}
+        {/* <button className={classes.button}>
+          <MdPostAdd size={18} />
+          New Post
+        </button> */}
       </form>
     </div>
   );
 }
+
+AddTodoForm.propTypes = {
+  onAddTodo: PropTypes.func,
+};
 
 export default AddTodoForm;
