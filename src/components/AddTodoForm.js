@@ -41,7 +41,7 @@ function AddTodoForm({ todoList, setTodoList }) {
             value={todoTitle}
             name="title"
             onChange={handleTitleChange}
-            placeholder="Add tasks, get things done.It's that easy."
+            placeholder="Add tasks here , get things done.It's that easy."
           ></input>
 
           <button type="submit" className={classes.button}>
