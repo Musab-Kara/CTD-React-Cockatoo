@@ -7,6 +7,11 @@ import "./App.css";
 function App() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+
+  
+
+
   useEffect(() => {
     fetch(
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/Default?view=Grid%20view&sort[0][field]=Title&sort[0][direction]=asc`,
@@ -30,7 +35,11 @@ function App() {
     const newTodoList = todoList.filter((todo) => id !== todo.id);
     setTodoList(newTodoList);
   }
-
+ 
+  
+  
+  
+  
   useEffect(() => {
     if (!isLoading) {
       return localStorage.setItem("savedTodoList", JSON.stringify(todoList));
@@ -63,7 +72,7 @@ function App() {
                       return 0;
                     }
                   })}
-                  onRemoveTodo={removeTodo}
+                    onRemoveTodo={removeTodo}
                 />
               )}
             </div>
@@ -74,6 +83,7 @@ function App() {
           element={
             <div>
               <MainHeader />
+              
             </div>
           }
         />

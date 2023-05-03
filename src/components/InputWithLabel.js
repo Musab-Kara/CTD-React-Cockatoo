@@ -28,7 +28,7 @@ function InputWithLabel({ handleTitleChange, todoTitle, children, isFocused }) {
         onChange={handleTitleChange}
         style={whitebox}
       ></input>
-      {/* <button type="submit">Add</button> */}
+      
     </>
   );
 }

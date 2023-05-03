@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import classes from "./AddTodoForm.module.css";
+import classes from "../style/AddTodoForm.module.css";
 import { MdPostAdd } from "react-icons/md";
 
 function AddTodoForm({ todoList, setTodoList }) {
-  
   const [todoTitle, setTodoTitle] = useState("");
-
-  
 
   function handleTitleChange(event) {
     let newTodoTitle = event.target.value;
@@ -16,7 +13,7 @@ function AddTodoForm({ todoList, setTodoList }) {
 
   function handleAddTodo(event) {
     event.preventDefault();
-    
+
     setTodoList([
       ...todoList,
       {
@@ -33,29 +30,33 @@ function AddTodoForm({ todoList, setTodoList }) {
 
   return (
     <div>
-      <form onSubmit={handleAddTodo}>
-        <label htmlFor="todoTitle">Title</label>
-        <input
-          id="todoTitle"
-          type="text"
-          value={todoTitle}
-          name="title"
-          onChange={handleTitleChange}
-        ></input>
-        <button type="submit" className={classes.button} >
-          <MdPostAdd size={18} />
-          New Post
-        </button>
-       
+      <form onSubmit={handleAddTodo} className={classes.musab}>
+        <div className={classes.input}>
+          <label htmlFor="todoTitle"></label>
+
+          <input
+            className={classes.input}
+            id="todoTitle"
+            type="text"
+            value={todoTitle}
+            name="title"
+            onChange={handleTitleChange}
+            placeholder="Add tasks, get things done.It's that easy."
+          ></input>
+
+          <button type="submit" className={classes.button}>
+            <MdPostAdd size={18} />
+            New Post
+          </button>
+        </div>
       </form>
     </div>
   );
 }
 
 AddTodoForm.propTypes = {
-  setTodoList : PropTypes.func,
+  setTodoList: PropTypes.func,
   todoList: PropTypes.array,
-
 };
 
 export default AddTodoForm;
