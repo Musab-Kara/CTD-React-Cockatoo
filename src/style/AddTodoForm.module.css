@@ -25,11 +25,11 @@
   border: 0;
   outline: none;
   width: 80vw;
-  max-width: 450px;
+  max-width: 500px;
   font-size: larger ;
   display: inline;
   color: white;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .input:focus {
   padding-bottom: 5px;
