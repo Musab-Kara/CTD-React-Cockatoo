@@ -1,19 +1,14 @@
-import { MdPostAdd, MdMessage } from "react-icons/md";
+import React from "react";
 import classes from "./MainHeader.module.css";
+import AddTodoForm from "./AddTodoForm";
 
-function MainHeader({ onAddTodo }) {
+function MainHeader({ todoList, setTodoList }) {
   return (
     <header className={classes.header}>
-      <h1 className={classes.logo}>
-        {/* <MdMessage /> */}
-        My ToDo List
-      </h1>
-      <p>
-        <button className={classes.button} onClick={onAddTodo}>
-          <MdPostAdd size={18} />
-          New Post
-        </button>
-      </p>
+      <h1 className={classes.logo}>My ToDo List</h1>
+      <>
+        <AddTodoForm todoList={todoList} setTodoList={setTodoList} />
+      </>
     </header>
   );
 }
