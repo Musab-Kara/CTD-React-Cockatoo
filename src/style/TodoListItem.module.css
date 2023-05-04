@@ -6,8 +6,6 @@
   background-color: #a990fb;
   color: #2a2630;
   border: none;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   font-weight: bold;
 }
@@ -18,8 +16,20 @@
 
 .ListItem {
   color: white;
-  padding: 4px;
   list-style-type: none;
+  display: inline-flex;
+  box-sizing: border-box;
+  width: 35%;
+  box-shadow: #2a2630;
+  border-radius: 10px;
+  padding: 4px;
+  font-weight: bold;
+  background-color: #a990fb;
+  color: #2a2630;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 450px) {
@@ -27,3 +37,12 @@
     padding: 0px;
   }
 }
+
+.title {
+  margin: 10px;
+}
+.titleLine {
+  margin: 10px;
+  text-decoration: line-through;
+}
+

@@ -1,5 +1,5 @@
 .header {
-  /* padding: 2rem 10%; */
+  padding: 2rem 10%;
   margin: 2rem 10%;
   padding: 1rem;
   text-align: center;
@@ -7,6 +7,10 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #ece1fa;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .logo {
